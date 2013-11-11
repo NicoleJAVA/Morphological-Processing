@@ -9,7 +9,11 @@
 #define ThreshUp 30
 #define ThreshLow 20
 using namespace std;
-
+unsigned char afterErode4[Size][Size];
+unsigned char afterErode5[Size][Size];
+unsigned char afterErode6[Size][Size];
+unsigned char afterErode7[Size][Size];
+unsigned char afterErode8[Size][Size];
 int main( int argc, char *argv[])
 {
 	FILE *file;
@@ -66,42 +70,172 @@ int main( int argc, char *argv[])
 			}	
 		}	//	End-2-for
 	}	//	End-1-for
-	/******************************************************** b e g i n ***
-	int erodeLoop = 1;
-	for(  erodeLoop = 1; erodeLoop <=1; erodeLoop++ ){			
 
+	/******************************************************** b e g i n ***/
+	unsigned char afterErode2[Size][Size];
 		for( i = 2; i < Size-2; i++ ){
 			for( j = 2; j < Size-2; j++){
 		
-				maxNeighbor = -1;
+				maxNeighbor = 257;
 
 				for( iOffset = -2; iOffset <= 2; iOffset++ ){
-					for( jOffset = -2; jOffset <= 2; jOffset++ ){
-							
-						if( Imagedata[i+iOffset][j+jOffset] < maxNeighbor ){
+					for( jOffset = -2; jOffset <= 2; jOffset++ ){	
+						if( afterErode[i+iOffset][j+jOffset] < maxNeighbor ){
 							maxNeighbor = afterErode[i+iOffset][j+jOffset];
 						}
-
-
 					}	//	End-4-for
 				}	//	End-3-for					
 
-				afterErode[i][j] = maxNeighbor;
+				afterErode2[i][j] = static_cast<unsigned char>(maxNeighbor);
 					
 			}	//	End-2-for
 		}	//	End-1-for
-  
-	} // End-0-for
-	
-   ******************************************************** END ***/
+  	
+/******************************************************** END ***/
+
+	/******************************************************** b e g i n ***/
+	unsigned char afterErode3[Size][Size];
+		for( i = 2; i < Size-2; i++ ){
+			for( j = 2; j < Size-2; j++){
+		
+				maxNeighbor = 257;
+
+				for( iOffset = -2; iOffset <= 2; iOffset++ ){
+					for( jOffset = -2; jOffset <= 2; jOffset++ ){	
+						if( afterErode2[i+iOffset][j+jOffset] < maxNeighbor ){
+							maxNeighbor = afterErode2[i+iOffset][j+jOffset];
+						}
+					}	//	End-4-for
+				}	//	End-3-for					
+
+				afterErode3[i][j] = static_cast<unsigned char>(maxNeighbor);
+					
+			}	//	End-2-for
+		}	//	End-1-for
+  	
+/******************************************************** END ***/
+
+
+
+	/******************************************************** b e g i n ***/
+	//unsigned char afterErode4[Size][Size];
+		for( i = 2; i < Size-2; i++ ){
+			for( j = 2; j < Size-2; j++){
+		
+				maxNeighbor = 257;
+
+				for( iOffset = -2; iOffset <= 2; iOffset++ ){
+					for( jOffset = -2; jOffset <= 2; jOffset++ ){	
+						if( afterErode3[i+iOffset][j+jOffset] < maxNeighbor ){
+							maxNeighbor = afterErode3[i+iOffset][j+jOffset];
+						}
+					}	//	End-4-for
+				}	//	End-3-for					
+
+				afterErode4[i][j] = static_cast<unsigned char>(maxNeighbor);
+					
+			}	//	End-2-for
+		}	//	End-1-for
+  	
+/******************************************************** END ***/
+
+	/******************************************************** b e g i n ***/
+	//unsigned char afterErode5[Size][Size];
+		for( i = 2; i < Size-2; i++ ){
+			for( j = 2; j < Size-2; j++){
+		
+				maxNeighbor = 257;
+
+				for( iOffset = -2; iOffset <= 2; iOffset++ ){
+					for( jOffset = -2; jOffset <= 2; jOffset++ ){	
+						if( afterErode4[i+iOffset][j+jOffset] < maxNeighbor ){
+							maxNeighbor = afterErode4[i+iOffset][j+jOffset];
+						}
+					}	//	End-4-for
+				}	//	End-3-for					
+
+				afterErode5[i][j] = static_cast<unsigned char>(maxNeighbor);
+					
+			}	//	End-2-for
+		}	//	End-1-for
+  	
+/******************************************************** END ***/
+
+
+
+
+	/******************************************************** b e g i n ***/
+	//unsigned char afterErode6[Size][Size];
+		for( i = 2; i < Size-2; i++ ){
+			for( j = 2; j < Size-2; j++){
+		
+				maxNeighbor = 257;
+
+				for( iOffset = -2; iOffset <= 2; iOffset++ ){
+					for( jOffset = -2; jOffset <= 2; jOffset++ ){	
+						if( afterErode5[i+iOffset][j+jOffset] < maxNeighbor ){
+							maxNeighbor = afterErode5[i+iOffset][j+jOffset];
+						}
+					}	//	End-4-for
+				}	//	End-3-for					
+
+				afterErode6[i][j] = static_cast<unsigned char>(maxNeighbor);
+					
+			}	//	End-2-for
+		}	//	End-1-for
+  	
+/******************************************************** END ***/
+
+	/******************************************************** b e g i n ***/
+	//unsigned char afterErode7[Size][Size];
+		for( i = 2; i < Size-2; i++ ){
+			for( j = 2; j < Size-2; j++){
+		
+				maxNeighbor = 257;
+
+				for( iOffset = -2; iOffset <= 2; iOffset++ ){
+					for( jOffset = -2; jOffset <= 2; jOffset++ ){	
+						if( afterErode6[i+iOffset][j+jOffset] < maxNeighbor ){
+							maxNeighbor = afterErode6[i+iOffset][j+jOffset];
+						}
+					}	//	End-4-for
+				}	//	End-3-for					
+
+				afterErode7[i][j] = static_cast<unsigned char>(maxNeighbor);
+					
+			}	//	End-2-for
+		}	//	End-1-for
+  	
+/******************************************************** END ***/
+
+	/******************************************************** b e g i n ***/
+	//unsigned char afterErode8[Size][Size];
+		for( i = 2; i < Size-2; i++ ){
+			for( j = 2; j < Size-2; j++){
+		
+				maxNeighbor = 257;
+
+				for( iOffset = -2; iOffset <= 2; iOffset++ ){
+					for( jOffset = -2; jOffset <= 2; jOffset++ ){	
+						if( afterErode7[i+iOffset][j+jOffset] < maxNeighbor ){
+							maxNeighbor = afterErode7[i+iOffset][j+jOffset];
+						}
+					}	//	End-4-for
+				}	//	End-3-for					
+
+				afterErode8[i][j] = static_cast<unsigned char>(maxNeighbor);
+					
+			}	//	End-2-for
+		}	//	End-1-for
+  	
+/******************************************************** END ***/
 
 	unsigned char boundary1[Size][Size];
-	unsigned char boundary2[Size][Size];
 	unsigned char temp;
 	
 	for( i=0; i< Size; i++ ){
 		for( j=0; j<Size; j++ ){
-			temp = Imagedata[i][j] - afterErode[i][j];
+			temp = Imagedata[i][j] - afterErode8[i][j];
 			boundary1[i][j] = temp;
 	
 		}
@@ -120,23 +254,6 @@ int main( int argc, char *argv[])
 		fwrite(afterErode, sizeof(unsigned char), Size*Size, file);
 		fclose(file);
 	}
-	
-
-						/********************************************/
-						/******                                ******/
-						/******    write image to "afterErode2.raw"  
-						/******                                ******/
-						/********************************************	
-	if (  !(file=fopen("afterErode2.raw","wb"))  ){
-		cout<<"Cannot open file!"<<endl;
-		exit(1);
-	}
-	else{
-		fwrite(afterErode, sizeof(unsigned char), Size*Size, file);
-		fclose(file);
-	}
-	
-	
 						/********************************************/
 						/******                                ******/
 						/******    write image to "M.raw"  ******/
@@ -151,26 +268,7 @@ int main( int argc, char *argv[])
 		fclose(file);
 	}
 	
-
-						/********************************************/
-						/******                                ******/
-						/******    write image to "M_2.raw"  ******/
-						/******                                ******/
-						/********************************************
-	if (  !(file=fopen("M_2.raw","wb"))  ){
-		cout<<"Cannot open file!"<<endl;
-		exit(1);
-	}
-	else{
-		fwrite(boundary2, sizeof(unsigned char), Size*Size, file);
-		fclose(file);
-	}
-	
-
-		/********************************************/		
-
-
-
+						/********************************************/		
 	system("PAUSE");
 	exit(0);
 }
